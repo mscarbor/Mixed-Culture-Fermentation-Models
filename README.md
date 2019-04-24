@@ -58,7 +58,7 @@ model.add_reactions([reaction])
 print(reaction.name + ": " + str(reaction.check_mass_balance()))
 ```
 
-We first add the two metabolites, D-xylulose 5-phosphate and D-Ribulose 5-phosphate. Then, we add the reaction based on it's ID (which, when possible matches the reaction ID from the BIGG Database (http://bigg.ucsd.edu). The reaction bounds indicate whether the default reaction is reversible or not. We can change reversibility later if we want. We then set the reaction stoihciometry, in this case consuming 1 ru5p_c and producing 1 xu5p_c. We then add the reaction to the model using '''model.add_reactions([reaction])```. Lastly, we check the mass balance and print it to the model output. 
+We first add the two metabolites, D-xylulose 5-phosphate and D-Ribulose 5-phosphate. Then, we add the reaction based on it's ID (which, when possible matches the reaction ID from the BIGG Database (http://bigg.ucsd.edu). The reaction bounds indicate whether the default reaction is reversible or not. We can change reversibility later if we want. We then set the reaction stoihciometry, in this case consuming 1 ru5p_c and producing 1 xu5p_c. We then add the reaction to the model using ```model.add_reactions([reaction])```. Lastly, we check the mass balance and print it to the model output. 
 
 **Feeding the model**
 
