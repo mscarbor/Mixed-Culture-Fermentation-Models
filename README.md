@@ -15,6 +15,8 @@ This readme describes the use of two mixed culture fermentation metabolic models
 
 ## Model Descriptions
 
+Reactions, Metabolites, Compartments, exchange reactions
+
 **iFerment156**
 iFerment156 is a unicellular metabolic model with 156 reactions.
 
@@ -24,12 +26,39 @@ iFermGuids548 is a community metbaolic model with 548 reactions distributed amon
 ## Getting started
 
 **Constraining the reactor environment**
+
 In the model, see **Part I: REACTOR PARAMETERS**
 
 Here, you can tell the model if it should consider transport energetics related to extracellular concentrations of end-products. You can also set the temperature, the biomass concentration (volatile suspended solids, VSS) concentraion, the intracellular and extracellular pH, and the concentrations of products inside and outside the cell. To ignore transport energetics, you can simply set ```TransEnergetics = False```. If you are not interested in modeling a bioreactor, and are interested in flux distributions, you can just set the volume and VSS concentrationeach to ```1``` which will result in all reported fluxes being in units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>  
 
 **Building the metabolic networks**
+
 In the model, see **Part II: BUILDING THE MODEL**
+
+Most of the code in the models adds reactions and metabolites to build the metabolic networks. For example, the following code adds the ribulose-5-phosphate 3-epimerase reaction to the model:
+
+```
+#ru5p__D_c <-> xu5p__D_c
+
+xu5p__D_c = Metabolite('xu5p__D_c', formula='C5H9O8P', name='D-Xylulose 5-phosphate', compartment='c', charge=-2)
+ru5p__D_c = Metabolite('ru5p__D_c', formula='C5H9O8P', name='D-Ribulose 5-phosphate', compartment='c', charge=-2)
+
+reaction = Reaction('RPE')
+reaction.name = 'Ribulose 5-phosphate 3-epimerase'
+reaction.subsystem = 'Pentose Utilization'
+reaction.lower_bound = -1000.  # This is the default
+reaction.upper_bound = 1000.  # This is the default
+
+reaction.add_metabolites({ru5p__D_c: -1.0,
+                          xu5p__D_c: 1.0})
+
+
+model.add_reactions([reaction])
+
+print(reaction.name + ": " + str(reaction.check_mass_balance()))
+```
+
+We first add the two metabolites, D-xylulose 5-phosphate and D-Ribulose 5-phosphate. Then, we add the reaction based on it's ID (which, when possible matches the reaction ID from the BIGG Database (http://bigg.ucsd.edu). The reaction bounds indicate whether the default reaction is reversible or not. We can change reversibility later if we want. We then set the reaction stoihciometry, in this case consuming 1 ru5p_c and producing 1 xu5p_c. We then add the reaction to the model using '''model.add_reactions([reaction])```. Lastly, we check the mass balance and print it to the model output. 
 
 **Feeding the model**
 
