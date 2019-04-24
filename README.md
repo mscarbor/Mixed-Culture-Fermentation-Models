@@ -58,7 +58,7 @@ model.medium = medium
 
 In the model, see **PART IV: SET ADDITIONAL CONSTRAINTS**
 
-To turn off a reaction, use the '''.knockout()''' function from CobraPy. As an example, if we want to turn of Coenzyme A Transferase for all products from 4-8 carbons in length, we would use the following:
+To turn off a reaction, use the ''' .knockout() ''' function from CobraPy. As an example, if we want to turn of Coenzyme A Transferase for all products from 4-8 carbons in length, we would use the following:
 
 ```
 #Turn off CoaT
