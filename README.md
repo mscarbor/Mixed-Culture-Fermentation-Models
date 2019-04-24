@@ -63,6 +63,7 @@ To turn off end-products, use the ```.knockout()``` function from CobraPy to tur
 ```
 #Turn off end products
 model.reactions.EX_for.knock_out()
+```
 
 To turn off a reaction, use the ```.knockout()``` function from CobraPy. As an example, if we want to turn of Coenzyme A Transferase for all products from 4-8 carbons in length, we could use the following:
 
