@@ -141,15 +141,15 @@ In the model, see **PART V: Setting the objective function**.
 
 To set the objective function to maximize ATP production, use the built in function from CobraPy:
 
-For iFerment156:
+***For iFerment156:***
 
 ```
 model.objective = 'ATP_Hydrolysis'
 ```
 
-In this case, we are setting the objective function to teh ATP hydrolysis step. 
+In this case, we are setting the objective function to the ATP hydrolysis step. 
 
-For iFermGuilds548:
+***For iFermGuilds548:***
 
 ```
 model.objective = 'EX_ATP_COMM_e'
