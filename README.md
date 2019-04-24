@@ -214,7 +214,7 @@ writer.save()
 
 To convert the model to a form that can be used in the Matlab distribution of COBRA, convert the model to SBML format using:
 
-cobra.io.write_sbml_model(model, "model.xml")
+```cobra.io.write_sbml_model(model, "model.xml")```
 
 
 
