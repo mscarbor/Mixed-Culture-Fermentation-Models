@@ -56,6 +56,15 @@ model.medium = medium
 
 **Turning reactions on and off**
 
+```
+#Turn off CoaT
+model.reactions.LEO_CoATC4.knock_out()
+model.reactions.LEO_CoATC6.knock_out()
+model.reactions.LEO_CoATC8.knock_out()
+model.reactions.LEO_CoATC5.knock_out()
+model.reactions.LEO_CoATC7.knock_out()
+```
+
 **Constraining products**
 
 **Constraining "growth rates"**
