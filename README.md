@@ -135,7 +135,27 @@ Constraint_abundance_3 = model.problem.Constraint(model.reactions.HSF_ATP_Hydrol
 model.add_cons_vars(Constraint_abundance_3)
 ```
 
+**Setting the objective function**
 
+In the model, see **PART V: Setting the objective function**.
+
+To set the objective function to maximize ATP production, use the built in function from CobraPy:
+
+For iFerment156:
+
+```
+model.objective = 'ATP_Hydrolysis'
+```
+
+In this case, we are setting the objective function to teh ATP hydrolysis step. 
+
+For iFermGuilds548:
+
+```
+model.objective = 'EX_ATP_COMM_e'
+```
+
+In this case, we are creating a "dummy" metabolite that is created through each individual guilds ATP hydrolysis reaction and maximizing the ATP production by the community. 
 
 
 
