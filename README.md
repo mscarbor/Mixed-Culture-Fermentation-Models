@@ -6,9 +6,9 @@ Contact: scarborough.matthew@gmail.com
 This readme describes the use of two mixed culture fermentation metabolic models: a unicellular model and a mixed community model
 
 ## Prerequisites
-* [Python 3.5 or later] (https://www.python.org/downloads/) -  Both metabolis models are written with python. Matlab versions can be created using CobraPy. 
+* [Python 3.5 or later] (https://www.python.org/downloads/) -  Both metabolic models are written with python. Matlab versions can be created using CobraPy. 
  
-* [CobraPy] (https://cobrapy.readthedocs.io/en/latest/) - Python package for metbaolic modeling using the COBRA framework.
+* [CobraPy] (https://cobrapy.readthedocs.io/en/latest/) - Python package for metabolic modeling using the COBRA framework.
 
 ## Recommended Software
 * [PyCharm] (https://www.jetbrains.com/pycharm/) - Integrated development environment used for constructing the models.
