@@ -23,14 +23,14 @@ iFermGuids548 is a community metbaolic model with 548 reactions distributed amon
 
 ## Getting started
 
-**Feeding the model
+**Feeding the model**
 
-**Turning reactions on and off
+**Turning reactions on and off**
 
-**Constraining products
+**Constraining products**
 
-**Constraining "growth rates"
+**Constraining "growth rates"**
 
-**Considering transport energetics
+**Considering transport energetics**
 
 
