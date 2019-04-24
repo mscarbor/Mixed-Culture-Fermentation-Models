@@ -25,7 +25,7 @@ iFermGuids548 is a community metbaolic model with 548 reactions distributed amon
 
 **Feeding the model**
 
-'''medium = model.medium
+```medium = model.medium
 
 
 medium["EX_xyl__D_e"] = 0.1317 #mmol/hr
@@ -46,7 +46,7 @@ medium["EX_hpta_e"] = 0
 medium["EX_co2_e"] = 0
 medium["EX_for_e"] = 0
 
-model.medium = medium'''
+model.medium = medium```
 
 **Turning reactions on and off**
 
