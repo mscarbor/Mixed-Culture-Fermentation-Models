@@ -23,9 +23,17 @@ iFermGuids548 is a community metbaolic model with 548 reactions distributed amon
 
 ## Getting started
 
+**Constraining the reactor environment**
+In the model, see **Part I: REACTOR PARAMETERS**
+
+Here, you can tell the model if it should consider transport energetics related to extracellular concentrations of end-products. You can also set the temperature, the biomass concentration (volatile suspended solids, VSS) concentraion, the intracellular and extracellular pH, and the concentrations of products inside and outside the cell. To ignore transport energetics, you can simply set ```TransEnergetics = False```. If you are not interested in modeling a bioreactor, and are interested in flux distributions, you can just set the volume and VSS concentrationeach to ```1``` which will result in all reported fluxes being in units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>  
+
+**Building the metabolic networks**
+In the model, see **Part II: BUILDING THE MODEL**
+
 **Feeding the model**
 
-In the model, see **Part III: Substrate Uptake**
+In the model, see **Part III: SUBSTRATE UPTAKE**
 
 To set substrate uptake, in mmol/hr, set the "medium" value to the desired uptake rate. This is the maximum uptake rate, so if you specify multiple medium componenents, one may be limiting. For all exchange metabolites that you do not want to test,set the value to 0. This will ensure the model does not consume these compounds, but it still allows the model to produce these compounds.  As an example, to test co-utilization of xylose and hydrogen gas with xylose being the limiting substrate, I could set the media constraints as follows:
 
