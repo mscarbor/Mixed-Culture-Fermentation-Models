@@ -143,19 +143,71 @@ To set the objective function to maximize ATP production, use the built in funct
 
 ***For iFerment156:***
 
+In this case, we are setting the objective function to the ATP hydrolysis step. 
+
 ```
 model.objective = 'ATP_Hydrolysis'
 ```
 
-In this case, we are setting the objective function to the ATP hydrolysis step. 
-
 ***For iFermGuilds548:***
+
+The community model uses a "dummy" metabolite (ATP_COMM) that is created through each guilds' ATP hydrolysis reaction. Then, we set the objective function to maximize the exchange of this metabolite, which results in maximzing the ATP production by the community. 
 
 ```
 model.objective = 'EX_ATP_COMM_e'
 ```
 
-In this case, we are creating a "dummy" metabolite that is created through each individual guilds ATP hydrolysis reaction and maximizing the ATP production by the community. 
+Additional objective functions, such as maximizing octanoate production, can also be used. 
+
+**Running the model**
+
+***pFBA:***
+
+Parsimonious flux balance analysis (pFBA) finds a set of fluxes that maximizes the objective function while minimizing the sum of fluxes through the model. The results of pFBA is a single flux for each reaction in the model. 
+
+To run pFBA and print the results use:
+
+```
+pfba_solution = cobra.flux_analysis.pfba(model)
+model.summary()
+print (pfba_solution.fluxes)
+```
+
+***FVA:***
+
+Flux variability analysis provides a range of fluxes through each reaction that can maintain the maximum objective function flux (or some percentage of the maximum objective function flux). The results of FVA are a minimum and maximum flux for each reaction. 
+
+To run FVA and print the results use:
+
+```
+fva = flux_variability_analysis(model, loopless=True, fraction_of_optimum=1)
+print (fva)
+```
+
+**Model outputs**
+The models are set-up to print results to excel. 
+
+To create an output file (output.xlsx) of each reaction with its pFBA flux value, use:
+
+```
+writer = pandas.ExcelWriter('output_FBA.xlsx')
+pfba_solution.fluxes.to_excel(writer,'Sheet1')
+writer.save()
+```
+
+To write the FVA results to excel (output_FVA.xlsx), use
+
+```
+writer = pandas.ExcelWriter('output_FVA.xlsx')
+fva.to_excel(writer,'Sheet1')
+writer.save()
+```
+
+
+
+
+
+
 
 
 
