@@ -25,6 +25,9 @@ iFermGuids548 is a community metbaolic model with 548 reactions distributed amon
 
 **Feeding the model**
 
+In the model, see **Part III: Substrate Uptake**
+To set substrate uptake, in mmol/hr, set the "medium" value to the desired uptake rate. This is the maximum uptake rate, so if you specify multiple medium componenents, one may be limiting. For all exchange metabolites that you do not want to test,set the value to 0. This will ensure the model does not consume these compounds, but it still allows the model to produce these compounds.  As an example, to test co-utilization of xylose and hydrogen gas with xylose being the limiting substrate, I could set the media constraints as follows:
+
 ```
 medium = model.medium
 
@@ -38,7 +41,7 @@ medium["EX_etoh_e"] = 0
 medium["EX_ac_e"] = 0
 medium["EX_but_e"] = 0
 medium["EX_hxa_e"] = 0
-medium["EX_h2_e"] = 0
+medium["EX_h2_e"] = 1000
 medium["EX_octa_e"] = 0
 medium["EX_ppa_e"] = 0
 medium["EX_pta_e"] = 0
