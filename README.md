@@ -58,18 +58,26 @@ model.medium = medium
 
 In the model, see **PART IV: SET ADDITIONAL CONSTRAINTS**
 
-To turn off a reaction, use the ```.knockout()``` function from CobraPy. As an example, if we want to turn of Coenzyme A Transferase for all products from 4-8 carbons in length, we would use the following:
+To turn off end-products, use the ```.knockout()``` function from CobraPy to turnoff exhcange reactions. If we wanted to prevent the model from producing formate, for instance, we could use the following:
+
+```
+#Turn off end products
+model.reactions.EX_for.knock_out()
+
+To turn off a reaction, use the ```.knockout()``` function from CobraPy. As an example, if we want to turn of Coenzyme A Transferase for all products from 4-8 carbons in length, we could use the following:
 
 ```
 #Turn off CoaT
-model.reactions.LEO_CoATC4.knock_out()
-model.reactions.LEO_CoATC6.knock_out()
-model.reactions.LEO_CoATC8.knock_out()
-model.reactions.LEO_CoATC5.knock_out()
-model.reactions.LEO_CoATC7.knock_out()
+model.reactions.CoATC4.knock_out()
+model.reactions.CoATC6.knock_out()
+model.reactions.CoATC8.knock_out()
+model.reactions.CoATC5.knock_out()
+model.reactions.CoATC7.knock_out()
 ```
 
 **Constraining products**
+
+
 
 **Constraining "growth rates"**
 
