@@ -21,13 +21,11 @@ This readme describes the use of two mixed culture fermentation metabolic models
 
 ## Model Descriptions
 
-Reactions, Metabolites, Compartments, exchange reactions
-
 **iFerment156**
 iFerment156 is a unicellular metabolic model with 156 reactions.
 
 **iFermGuilds548**
-iFermGuids548 is a community metbaolic model with 548 reactions distributed amongst six guilds.
+iFermGuids548 is a community metbaolic model with 548 reactions distributed among six guilds. 
 
 ## Getting started
 
