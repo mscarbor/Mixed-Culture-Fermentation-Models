@@ -22,10 +22,12 @@ This readme describes the use of two mixed culture fermentation metabolic models
 ## Model Descriptions
 
 **iFerment156**
+
 iFerment156 is a unicellular metabolic model with 156 reactions. This model contains pathways for fermentation pathways, including reverse b-oxidation, and is able to use several substrates. It contains three compartments: cytoplasm (c), extracellular space (e), and a compartment for generation of ion-motive force (i). 
 
 **iFermGuilds548**
-iFermGuids548 is a community metbaolic model with 548 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFerment156. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
+
+iFermGuids548 is a community metabolic model with 548 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFerment156. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
 
 ## Getting started
 
