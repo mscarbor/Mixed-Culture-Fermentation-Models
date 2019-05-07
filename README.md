@@ -3,7 +3,7 @@
 Copyright (c) 2019, Matthew J. Scarborough
 Contact: scarborough.matthew@gmail.com
 
-This readme describes the use of two mixed culture fermentation metabolic models: a unicellular model and a mixed community model
+This readme describes the use of two mixed culture fermentation metabolic models: a one-cell bulk model and a mixed community model
 
 ## Prerequisites
 * [Python 3.5 or later] (https://www.python.org/downloads/) -  Both metabolic models are written with python. Matlab versions can be created using CobraPy. 
