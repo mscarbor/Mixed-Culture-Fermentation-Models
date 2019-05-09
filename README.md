@@ -8,16 +8,16 @@ This readme describes the use of two mixed culture fermentation metabolic models
 ## Prerequisites
 * [Python 3.5 or later] (https://www.python.org/downloads/) -  Both metabolic models are written with python. Matlab versions can be created using CobraPy. 
  
-* [CobraPy] (https://cobrapy.readthedocs.io/en/latest/) - Python package for metabolic modeling using the COBRA framework
+* [CobraPy](https://cobrapy.readthedocs.io/en/latest/) - Python package for metabolic modeling using the COBRA framework
 
-* [PANDAS] (https://pandas.pydata.org) - Data anlysis library for Python
+* [PANDAS](https://pandas.pydata.org) - Data anlysis library for Python
 
-* [NUMPY] (https://www.numpy.org) - Python package for scientific computing
+* [NUMPY](https://www.numpy.org) - Python package for scientific computing
 
-* [MATH] (https://docs.python.org/3/library/math.html) - A module for math functions
+* [MATH](https://docs.python.org/3/library/math.html) - A module for math functions
 
 ## Recommended Software
-* [PyCharm] (https://www.jetbrains.com/pycharm/) - Integrated development environment used for constructing the models
+* [PyCharm](https://www.jetbrains.com/pycharm/) - Integrated development environment used for constructing the models
 
 ## Model Descriptions
 
