@@ -1,7 +1,7 @@
 # Mixed Culture Fermentation Metabolic Models
 
 Copyright (c) 2019, Matthew J. Scarborough
-Contact: scarborough.matthew@gmail.com
+Contact: matthew.scarborough@uvm.edu
 
 This readme describes the use of two mixed culture fermentation metabolic models: a one-cell bulk model and a mixed community model
 
