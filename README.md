@@ -10,7 +10,7 @@ This readme describes the use of two mixed culture fermentation metabolic models
  
 * [CobraPy](https://cobrapy.readthedocs.io/en/latest/) - Python package for metabolic modeling using the COBRA framework
 
-* [PANDAS](https://pandas.pydata.org) - Data anlysis library for Python
+* [PANDAS](https://pandas.pydata.org) - Data analysis library for Python
 
 * [NUMPY](https://www.numpy.org) - Python package for scientific computing
 
