@@ -27,9 +27,9 @@ iFerment156 is a unicellular metabolic model with 156 reactions. This model cont
 
 **iFermGuilds564**
 
-iFermGuids548 is a community metabolic model with 548 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFerment156. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
+iFermGuids564 is a community metabolic model with 564 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFerment156. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
 
-***Please note that fluxes in iFermGuilds548 model have multiple units. For intracellular reactions, the fluxes have standard units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>. For exchange reactions and community ATP production, the units are mmol hr<sup>-1</sup> because they are multipled by the mass of biomass related to each guild.***
+***Please note that fluxes in iFermGuilds564 model have multiple units. For intracellular reactions, the fluxes have standard units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>. For exchange reactions and community ATP production, the units are mmol hr<sup>-1</sup> because they are multipled by the mass of biomass related to each guild.***
 
 ## Getting started
 
