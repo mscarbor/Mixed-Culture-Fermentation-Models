@@ -1,7 +1,7 @@
 # Mixed Culture Fermentation Metabolic Models
 
-Copyright (c) 2019, Matthew J. Scarborough
-Contact: matthew.scarborough@uvm.edu
+Copyright (c) 2020, Matthew J. Scarborough
+Contact: mscarbor@uvm.edu
 
 This readme describes the use of two mixed culture fermentation metabolic models: a one-cell bulk model and a mixed community model
 
@@ -21,15 +21,15 @@ This readme describes the use of two mixed culture fermentation metabolic models
 
 ## Model Descriptions
 
-**iFerment156**
+**iFermCell215**
 
-iFerment156 is a unicellular metabolic model with 156 reactions. This model contains pathways for fermentation pathways, including reverse b-oxidation, and is able to use several substrates. It contains three compartments: cytoplasm (c), extracellular space (e), and a compartment for generation of ion-motive force (i). 
+iFermCell215 is a unicellular metabolic model with 156 reactions. This model contains pathways for fermentation pathways, including reverse b-oxidation, and is able to use several substrates. It contains three compartments: cytoplasm (c), extracellular space (e), and a compartment for generation of ion-motive force (i). 
 
-**iFermGuilds564**
+**iFermGuilds789**
 
-iFermGuids564 is a community metabolic model with 564 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFerment156. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
+iFermGuids789 is a community metabolic model with 564 reactions distributed among six functional guilds. The six guilds each contain subsets of reactions obtained in iFermCell215. The guilds are  simple sugar fermenters that produce acetate, lactate, and ethanol (SFOs), sugar fermenters that are able to generate ferredoxin and hydrogen gas (HSFs), organisms that perform reverse b-oxidation on intermediates derived from sugars (SEOs), lactate-consumers that perform reverse b-oxidation (LEOs), and organisms that produce acetate from hydrogen gas and CO2 (HAOs).
 
-***Please note that fluxes in iFermGuilds564 model have multiple units. For intracellular reactions, the fluxes have standard units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>. For exchange reactions and community ATP production, the units are mmol hr<sup>-1</sup> because they are multipled by the mass of biomass related to each guild.***
+***Please note that model flux results in both models have have multiple units. For intracellular reactions, the fluxes have standard units of mmol gDCW<sup>-1</sup> hr<sup>-1</sup>. For exchange reactions, the units are mmol hr<sup>-1</sup> because they are multipled by the mass of biomass related to each guild.***
 
 ## Getting started
 
@@ -151,22 +151,21 @@ model.add_cons_vars(Constraint_abundance_3)
 
 In the model, see **PART V: Setting the objective function**.
 
-To set the objective function to maximize ATP production, use the built in function from CobraPy:
+To set the objective function to maximize biomass growth, use the built in function from CobraPy:
 
-***For iFerment156:***
+***For iFermCell215:***
 
 In this case, we are setting the objective function to the ATP hydrolysis step. 
 
 ```
-model.objective = 'ATP_Hydrolysis'
+model.objective = 'BIOMASS'
 ```
 
-***For iFermGuilds564:***
+***For iFermGuilds789:***
 
-The community model uses a "dummy" metabolite (ATP_COMM) that is created through each guilds' ATP hydrolysis reaction. Then, we set the objective function to maximize the exchange of this metabolite, which results in maximzing the ATP production by the community. 
-
+To set the objective function to maximize biomass growth in iFermGuilds789, use:
 ```
-model.objective = 'EX_ATP_COMM_e'
+model.objective = 'EX_BIOMASS_COMM_e'
 ```
 
 Additional objective functions, such as maximizing octanoate production, can also be used. 
@@ -196,6 +195,9 @@ fva = flux_variability_analysis(model, loopless=True, fraction_of_optimum=1)
 print (fva)
 ```
 
+***Flux Sampling:***
+
+
 **Model outputs**
 
 The python code will write results to excel files.
@@ -208,11 +210,20 @@ pfba_solution.fluxes.to_excel(writer,'Sheet1')
 writer.save()
 ```
 
-To write the FVA results to excel (output_FVA.xlsx), use
+To write the FVA results to excel (output_FVA.xlsx), use:
 
 ```
 writer = pandas.ExcelWriter('output_FVA.xlsx')
 fva.to_excel(writer,'Sheet1')
+writer.save()
+```
+
+To write the flux sampling results to excel, use:
+
+```
+s = sample(model, 100, seed = 519)
+writer = pandas.ExcelWriter('output_FluxSampling.xlsx')
+s.to_excel(writer, 'Sheet1')
 writer.save()
 ```
 
