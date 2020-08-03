@@ -132,19 +132,22 @@ To change the reversibility of a reaction, we can set the reaction bounds to ove
 
 **Constraining "growth rates"**
 
-When using the community metabolic model, we may want to constrain growth rates of functional guilds. For instance, we may want all guilds to have the same growth rate to model a continously-fed reactor. To do this, we add custom model constraints using CobraPy. To constrain SEO, SFO, LEO, and HSFs to have ATP production rates (mmol ATP gDCW<sup>-1</sup> hr<sup>-1</sup> we could use the following:
+When using the community metabolic model, we may want to constrain growth rates of functional guilds. For instance, we may want all guilds to have the same growth rate to model a continously-fed reactor. To do this, we add custom model constraints using CobraPy. To constrain SEOs, SFOs, LEOs, and HSFs to have the same growth rate we can use the following:
 
 ```
-#Set  ATP Yield for each guild to be equal
+#Set growth rate for each guild to be equal
+#Please note that Including a guild not included in the model will result in an error!
 
-Constraint_abundance1 = model.problem.Constraint(model.reactions.SEO_ATP_Hydrolysis.flux_expression  - model.reactions.SFO_ATP_Hydrolysis.flux_expression, lb=0, ub=0)
-model.add_cons_vars(Constraint_abundance1)
+if SEO_Abnd > 0 and SFO_Abnd > 0 and HSF_Abnd > 0 and LEO_Abnd > 0:
+    Constraint_abundance1 = model.problem.Constraint(model.reactions.SEO_BIOMASS.flux_expression  - model.reactions.SFO_BIOMASS.flux_expression, lb=0, ub=0)
+    model.add_cons_vars(Constraint_abundance1)
 
-Constraint_abundance2 = model.problem.Constraint(model.reactions.SFO_ATP_Hydrolysis.flux_expression  - model.reactions.HSF_ATP_Hydrolysis.flux_expression, lb=0, ub=0)
-model.add_cons_vars(Constraint_abundance2)
+    Constraint_abundance2 = model.problem.Constraint(model.reactions.SFO_BIOMASS.flux_expression  - model.reactions.HSF_BIOMASS.flux_expression, lb=0, ub=0)
+    model.add_cons_vars(Constraint_abundance2)
 
-Constraint_abundance_3 = model.problem.Constraint(model.reactions.HSF_ATP_Hydrolysis.flux_expression  - model.reactions.LEO_ATP_Hydrolysis.flux_expression, lb=0, ub=0)
-model.add_cons_vars(Constraint_abundance_3)
+    Constraint_abundance_3 = model.problem.Constraint(model.reactions.HSF_BIOMASS.flux_expression  - model.reactions.LEO_BIOMASS.flux_expression, lb=0, ub=0)
+    model.add_cons_vars(Constraint_abundance_3)
+
 ```
 
 **Setting the objective function**
